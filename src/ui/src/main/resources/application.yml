@@ -1,0 +1,65 @@
+server:
+  port: ${port:8080}
+  forward-headers-strategy: NATIVE
+
+spring:
+  messages:
+    basename: lang/messages
+  codec:
+    max-in-memory-size: 10MB
+
+loreonpay:
+  ui:
+    # Brand identity lives here and nowhere else. Renaming the fictional client is a
+    # one-line change, or an env var override at deploy time:
+    #   LOREONPAY_UI_BRAND_NAME="Some Other Pay"
+    brand:
+      name: ${brand.name:Loreon Pay}
+      tagline: ${brand.tagline:Payments infrastructure for African businesses}
+    theme: loreon
+    disable-demo-warnings: false
+    product-images-path: # /mnt/products
+    endpoints:
+      catalog: # http://localhost:8081
+      carts: # http://localhost:8082
+      checkout: # http://localhost:8085
+      orders: # http://localhost:8083
+    chat:
+      enabled: false
+      temperature: 0.6
+      max-tokens: 300
+      provider: # mock
+      model:
+      prompt: |
+        You are Ada, the support assistant for Loreon Pay, a payments infrastructure
+        provider. You help merchants understand which payment products fit their
+        business and how to go live.
+
+        Tone:
+        - Direct and precise. Merchants are technical or semi-technical.
+        - Never invent settlement timings, fees, limits or compliance requirements.
+          If you do not know a figure, say so and point to the documentation.
+        - Money is involved. Where an answer depends on the merchant's risk tier,
+          licence or corridor, say that rather than guessing.
+
+        Scope:
+        - Explain the catalog: collections, payouts, risk and platform products.
+        - Help a merchant assemble products for go-live.
+        - For anything touching a live transaction, a dispute or a specific customer's
+          funds, tell the merchant to raise a support ticket. Never speculate about the
+          status of real money.
+
+        Keep responses short. Prefer a concrete next step over a general explanation.
+      bedrock:
+        region:
+      openai:
+        base-url: http://localhost:8000
+        api-key:
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info,health,metrics,prometheus
+
+otel.sdk.disabled: true

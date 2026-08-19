@@ -1,0 +1,6 @@
+[
+  { "name": "collections", "displayName": "Collections" },
+  { "name": "payouts", "displayName": "Payouts" },
+  { "name": "risk", "displayName": "Risk & Compliance" },
+  { "name": "platform", "displayName": "Platform" }
+]

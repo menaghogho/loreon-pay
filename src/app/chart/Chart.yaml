@@ -1,0 +1,26 @@
+apiVersion: v2
+name: loreon-pay-chart
+description: A Helm chart for the Loreon Pay application
+type: application
+version: 1.3.0
+dependencies:
+  - name: loreon-pay-cart-chart
+    alias: cart
+    version: 1.3.0
+    repository: file://../../cart/chart
+  - name: loreon-pay-catalog-chart
+    alias: catalog
+    version: 1.3.0
+    repository: file://../../catalog/chart
+  - name: loreon-pay-checkout-chart
+    alias: checkout
+    version: 1.3.0
+    repository: file://../../checkout/chart
+  - name: loreon-pay-orders-chart
+    alias: orders
+    version: 1.3.0
+    repository: file://../../orders/chart
+  - name: loreon-pay-ui-chart
+    alias: ui
+    version: 1.3.0
+    repository: file://../../ui/chart

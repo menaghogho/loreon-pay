@@ -1,0 +1,25 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea
+.vscode
+
+# Build output (each service also carries its own .gitignore)
+target/
+node_modules/
+dist/
+*.log
+
+# Secrets and state — never commit these
+.env
+.env.*
+*.tfvars
+*.tfstate*
+.terraform/
+kubeconfig_*
+
+# Helm
+Chart.lock
+**/charts/*.tgz

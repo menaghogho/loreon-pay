@@ -1,0 +1,26 @@
+/**
+ * Loreon Pay brand theme — Loreon Learning capstone.
+ *
+ * Added alongside upstream's theme-default / green / orange / teal rather than editing
+ * them, because the UI already selects a theme by name at runtime:
+ *   loreonpay.ui.theme: loreon      (or env var LOREONPAY_UI_THEME=loreon)
+ * root.html resolves that into /assets/css/theme-<name>.css, and Tailwind reads the
+ * --primary-color-* variables below. So the whole palette swap costs one config value.
+ *
+ * Deep teal reads as financial-services trust without being a bank cliché, and is
+ * clearly distinct from upstream's indigo so it's obvious at a glance whether you're
+ * looking at our image or AWS's.
+ */
+
+:root {
+  --primary-color-50: 240, 253, 250;
+  --primary-color-100: 204, 251, 241;
+  --primary-color-200: 153, 246, 228;
+  --primary-color-300: 94, 234, 212;
+  --primary-color-400: 45, 212, 191;
+  --primary-color-500: 20, 184, 166;
+  --primary-color-600: 13, 148, 136;
+  --primary-color-700: 15, 118, 110;
+  --primary-color-800: 17, 94, 89;
+  --primary-color-900: 19, 78, 74;
+}

@@ -1,0 +1,69 @@
+{
+  "properties": [
+    {
+      "name": "loreonpay.ui.theme",
+      "type": "java.lang.String",
+      "description": "Name of the theme for the UI"
+    },
+    {
+      "name": "loreonpay.ui.disable-demo-warnings",
+      "type": "java.lang.String",
+      "description": "Disable the UI messages warning about demonstration content"
+    },
+    {
+      "name": "loreonpay.ui.product-images-path",
+      "type": "java.lang.String",
+      "description": "Overrides the location where the sample product images are sourced from to use the specified file path"
+    },
+    {
+      "name": "loreonpay.ui.endpoints.catalog",
+      "type": "java.lang.String",
+      "description": "HTTP endpoint for the catalog service"
+    },
+    {
+      "name": "loreonpay.ui.endpoints.carts",
+      "type": "java.lang.String",
+      "description": "HTTP endpoint for the carts service"
+    },
+    {
+      "name": "loreonpay.ui.endpoints.checkout",
+      "type": "java.lang.String",
+      "description": "HTTP endpoint for the checkout service"
+    },
+    {
+      "name": "loreonpay.ui.endpoints.orders",
+      "type": "java.lang.String",
+      "description": "HTTP endpoint for the orders service"
+    },
+    {
+      "name": "loreonpay.ui.chat.enabled",
+      "type": "java.lang.String",
+      "description": "Enabled the chat assistant"
+    },
+    {
+      "name": "loreonpay.ui.chat.temperature",
+      "type": "java.lang.String",
+      "description": "Chat assistant model temperature"
+    },
+    {
+      "name": "loreonpay.ui.chat.max-tokens",
+      "type": "java.lang.String",
+      "description": "Chat assistant model maximum output tokens"
+    },
+    {
+      "name": "loreonpay.ui.chat.provider",
+      "type": "java.lang.String",
+      "description": "Chat assistant model provider"
+    },
+    {
+      "name": "loreonpay.ui.chat.model",
+      "type": "java.lang.String",
+      "description": "Chat assistant model provider model ID"
+    },
+    {
+      "name": "loreonpay.ui.chat.prompt",
+      "type": "java.lang.String",
+      "description": "Chat assistant system prompt"
+    }
+  ]
+}

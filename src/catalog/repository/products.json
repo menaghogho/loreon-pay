@@ -1,0 +1,86 @@
+[
+  {
+    "id": "cc789f85-1476-452a-8100-9e74502198e0",
+    "name": "Card Acquiring",
+    "description": "Accept Visa, Mastercard and Verve cards on web and mobile. Includes 3-D Secure 2 step-up authentication, tokenised card-on-file for repeat charges, and automatic retry of soft declines. Settles to your merchant account on a T+1 cycle.",
+    "price": 250,
+    "tags": ["collections"]
+  },
+  {
+    "id": "87e89b11-d319-446d-b9be-50adcca5224a",
+    "name": "Virtual Account Collections",
+    "description": "Issue a dedicated bank account number per customer so inbound transfers reconcile themselves. Webhooks fire on credit, and the payer reference is matched to the payment intent automatically. Removes manual proof-of-payment handling entirely.",
+    "price": 180,
+    "tags": ["collections"]
+  },
+  {
+    "id": "4f18544b-70a5-4352-8e19-0d070f46745d",
+    "name": "USSD Collections",
+    "description": "Take payments from feature phones and customers with no data connection via a shared USSD short code. Session state is held server-side for 90 seconds, and the flow degrades gracefully when the telco gateway times out.",
+    "price": 120,
+    "tags": ["collections"]
+  },
+  {
+    "id": "79bce3f3-935f-4912-8c62-0d2f3e059405",
+    "name": "Direct Debit Mandates",
+    "description": "Collect recurring subscription and loan repayments against a signed customer mandate. Handles mandate lifecycle, retry schedules on insufficient funds, and mandatory pre-debit notification to the payer.",
+    "price": 200,
+    "tags": ["collections"]
+  },
+  {
+    "id": "1ca35e86-4b4c-4124-b6b5-076ba4134d0d",
+    "name": "Single & Bulk Payouts",
+    "description": "Disburse to any local bank account, one at a time or as a batch of up to 10,000 in a single upload. Each payout is idempotent on your own reference, so a retried request never pays twice.",
+    "price": 220,
+    "tags": ["payouts"]
+  },
+  {
+    "id": "631a3db5-ac07-492c-a994-8cd56923c112",
+    "name": "Cross-Border FX Payouts",
+    "description": "Send funds across 14 corridors with a quoted rate locked for 30 seconds at initiation. Includes beneficiary bank validation, sanctions screening before release, and a settlement report per corridor.",
+    "price": 480,
+    "tags": ["payouts"]
+  },
+  {
+    "id": "8757729a-c518-4356-8694-9e795a9b3237",
+    "name": "Mobile Money Disbursement",
+    "description": "Pay out directly to mobile money wallets across major networks. Wallet-name lookup runs before debit so misdirected transfers are caught up front, and unclaimed transfers auto-reverse after 72 hours.",
+    "price": 160,
+    "tags": ["payouts"]
+  },
+  {
+    "id": "a1258cd2-176c-4507-ade6-746dab5ad625",
+    "name": "Fraud Scoring Engine",
+    "description": "Score every transaction in under 40ms against device fingerprint, velocity, and behavioural signals. Rules are yours to tune, and every decision is replayable against historical traffic before you promote it to production.",
+    "price": 600,
+    "tags": ["risk"]
+  },
+  {
+    "id": "d27cf49f-b689-4a75-a249-d373e0330bb5",
+    "name": "Identity & KYC Verification",
+    "description": "Verify customers against national ID, bank verification number and document capture with liveness detection. Produces a tiered assurance level you can gate transaction limits on, plus a retained audit trail for your regulator.",
+    "price": 350,
+    "tags": ["risk"]
+  },
+  {
+    "id": "d3104128-1d14-4465-99d3-8ab9267c687b",
+    "name": "Dispute & Chargeback Manager",
+    "description": "Track every chargeback from first notification to final resolution with scheme deadlines surfaced as countdowns. Evidence is assembled from your own transaction records and submitted in the format each scheme expects.",
+    "price": 240,
+    "tags": ["risk"]
+  },
+  {
+    "id": "d4edfedb-dbe9-4dd9-aae8-009489394955",
+    "name": "Sandbox & API Access",
+    "description": "Full-fidelity test environment with deterministic test cards, simulated telco failures and forced-decline triggers. Every production endpoint is available, and no test traffic ever touches settlement.",
+    "price": 20,
+    "tags": ["platform"]
+  },
+  {
+    "id": "d77f9ae6-e9a8-4a3e-86bd-b72af75cbc49",
+    "name": "Dedicated Settlement Ledger",
+    "description": "A double-entry ledger isolated to your business, with per-currency balances and immutable journal entries. Settlement runs on your own schedule rather than the shared cycle, and every balance is reconstructible from the entry log.",
+    "price": 15000,
+    "tags": ["platform"]
+  }
+]

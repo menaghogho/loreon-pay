@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" role="img" aria-label="Sandbox &amp; API Access">
+  <title>Sandbox &amp; API Access</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#115e59"/>
+      <stop offset="1" stop-color="#042f2e"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0 H0 V40" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.07"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="640" fill="url(#bg)"/>
+  <rect width="640" height="640" fill="url(#grid)"/>
+  <circle cx="530" cy="110" r="150" fill="#ffffff" opacity="0.05"/>
+  <g transform="translate(220 220)">
+      <path d="M72 28 C44 28 50 88 22 100 C50 112 44 172 72 172" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M128 28 C156 28 150 88 178 100 C150 112 156 172 128 172" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="100" cy="100" r="7" fill="#ffffff" stroke="none" opacity="0.55"/></g>
+</svg>

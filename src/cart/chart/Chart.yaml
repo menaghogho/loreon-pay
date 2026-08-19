@@ -1,0 +1,7 @@
+apiVersion: v2
+name: loreon-pay-cart-chart
+description: >-
+  A Helm chart for the Loreon Pay application carts
+  service
+type: application
+version: 1.3.0

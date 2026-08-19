@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="Ada, the Loreon Pay support assistant" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">
+<title>Ada, the Loreon Pay support assistant</title>
+<defs><linearGradient id="av" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14b8a6"/><stop offset="1" stop-color="#134e4a"/></linearGradient></defs>
+<rect width="256" height="256" rx="128.0" fill="url(#av)"/>
+<circle cx="128.0" cy="128.0" r="107.52" fill="none" stroke="#ffffff" stroke-width="3.072" opacity="0.2"/>
+<circle cx="128.0" cy="128.0" r="87.04" fill="none" stroke="#ffffff" stroke-width="3.072" opacity="0.28"/>
+<text x="128.0" y="162.56" font-size="107.52" fill="#ffffff" font-weight="700" text-anchor="middle" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif">A</text>
+</svg>

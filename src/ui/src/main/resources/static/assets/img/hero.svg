@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Loreon Pay">
+  <title>Loreon Pay</title>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#042f2e"/>
+      <stop offset="0.55" stop-color="#0f766e"/>
+      <stop offset="1" stop-color="#134e4a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.75" cy="0.25" r="0.7">
+      <stop offset="0" stop-color="#2dd4bf" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#2dd4bf" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="mesh" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0 H0 V64" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.06"/>
+    </pattern>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="900" fill="url(#mesh)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- Payment corridors: value moving between nodes -->
+  <g fill="none" stroke="#5eead4" stroke-width="2.5" opacity="0.5">
+    <path d="M120 700 C 420 700 380 300 700 300 S 1080 560 1420 480"/>
+    <path d="M120 560 C 480 560 520 200 900 200 S 1240 380 1500 300"/>
+    <path d="M180 820 C 560 820 620 620 1000 620 S 1300 700 1520 640"/>
+  </g>
+  <g fill="#99f6e4" opacity="0.9">
+    <circle cx="700" cy="300" r="9"/>
+    <circle cx="900" cy="200" r="7"/>
+    <circle cx="1000" cy="620" r="7"/>
+    <circle cx="120" cy="700" r="9"/>
+    <circle cx="1420" cy="480" r="9"/>
+  </g>
+  <g fill="none" stroke="#ffffff" stroke-width="2" opacity="0.22">
+    <circle cx="700" cy="300" r="30"/>
+    <circle cx="1420" cy="480" r="30"/>
+    <circle cx="120" cy="700" r="30"/>
+  </g>
+
+  <!-- Weighting toward the lower edge so the white page gradient blends cleanly -->
+  <rect y="620" width="1600" height="280" fill="#042f2e" opacity="0.35"/>
+</svg>
