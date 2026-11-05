@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: menalee/loreon-checkout
   pullPolicy: IfNotPresent
-  tag: "769a727"
+  tag: "7150d87"
 
 imagePullSecrets: []
 nameOverride: ''
