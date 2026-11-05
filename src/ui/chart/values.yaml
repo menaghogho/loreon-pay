@@ -5,9 +5,9 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/ileri-circo/loreon-pay-ui
+  repository: menalee/loreon-ui
   pullPolicy: IfNotPresent
-  tag: 
+  tag: "0b3a852"
 
 imagePullSecrets: []
 nameOverride: ""

@@ -99,6 +99,60 @@ and clean up with:
 docker compose -f src/app/docker-compose.yml -f src/app/compose.override.yaml down --remove-orphans
 ```
 
+## Secrets
+
+Passwords live in AWS Secrets Manager, never in this repo. `infra/secrets.tf` creates
+the empty secrets, so their values never reach Terraform state. Set the values once,
+from Git Bash:
+
+```bash
+seed() {
+  pw=$(aws secretsmanager get-random-password --exclude-punctuation --password-length 32 --query RandomPassword --output text)
+  aws secretsmanager put-secret-value --secret-id "$1" --secret-string "{\"username\":\"$2\",\"password\":\"$pw\"}" --query Name --output text
+}
+seed loreon/catalog-db catalog
+seed loreon/orders-db orders
+seed loreon/orders-rabbitmq rabbitmq
+
+pw=$(aws secretsmanager get-random-password --exclude-punctuation --password-length 32 --query RandomPassword --output text)
+aws secretsmanager put-secret-value --secret-id loreon/local/db-password --secret-string "$pw" --query Name --output text
+```
+
+The databases read a password only when their storage is first created, so changing a
+secret later also means changing it inside the database.
+
+**Docker Compose:** fetch the password when you start the stack. From `src/app`:
+
+```powershell
+$env:DB_PASSWORD = aws secretsmanager get-secret-value --secret-id loreon/local/db-password --query SecretString --output text
+docker compose up -d --build
+```
+
+**EKS:** External Secrets Operator copies the values into Kubernetes Secrets. Install it
+once per cluster:
+
+```bash
+ROLE_ARN=$(terraform -chdir=infra output -raw external_secrets_role_arn)
+
+helm upgrade --install external-secrets external-secrets \
+  --repo https://charts.external-secrets.io --version 2.14.0 \
+  --namespace external-secrets --create-namespace \
+  --set serviceAccount.name=external-secrets \
+  --set "serviceAccount.annotations.eks\.amazonaws\.com/role-arn=$ROLE_ARN" \
+  --wait
+
+kubectl apply -f src/app/eks/cluster-secret-store.yaml
+```
+
+Then deploy the app with Secrets Manager turned on:
+
+```bash
+helm dependency build src/app/chart
+helm upgrade --install loreon src/app/chart \
+  -f src/app/chart/values-stateful.yaml \
+  -f src/app/chart/values-eks.yaml
+```
+
 ## Helm
 
 Every service ships its own chart at `src/<service>/chart/`, and `src/app/chart` is the

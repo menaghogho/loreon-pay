@@ -29,8 +29,8 @@ spec:
           image: "{{ .Values.mysql.image.repository }}:{{ .Values.mysql.image.tag }}"
           imagePullPolicy: {{ .Values.mysql.image.pullPolicy }}
           env:
-            - name: MYSQL_ROOT_PASSWORD
-              value: my-secret-pw
+            - name: MYSQL_RANDOM_ROOT_PASSWORD
+              value: "yes"
             - name: MYSQL_DATABASE
               value: {{ .Values.app.persistence.database }}
             - name: MYSQL_USER

@@ -5,9 +5,9 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/ileri-circo/loreon-pay-cart
+  repository: menalee/loreon-cart
   pullPolicy: IfNotPresent
-  tag: 
+  tag: "769a727"
 
 imagePullSecrets: []
 nameOverride: ""

@@ -1,0 +1,19 @@
+# Use with values-stateful.yaml on EKS: passwords come from AWS Secrets Manager.
+catalog:
+  app:
+    persistence:
+      secret:
+        external:
+          enabled: true
+
+orders:
+  app:
+    persistence:
+      secret:
+        external:
+          enabled: true
+    messaging:
+      rabbitmq:
+        secret:
+          external:
+            enabled: true

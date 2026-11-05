@@ -28,6 +28,19 @@ spec:
         - name: rabbitmq
           image: "{{ .Values.rabbitmq.image.repository }}:{{ .Values.rabbitmq.image.tag }}"
           imagePullPolicy: {{ .Values.rabbitmq.image.pullPolicy }}
+          {{- if .Values.app.messaging.rabbitmq.secret.external.enabled }}
+          env:
+            - name: RABBITMQ_DEFAULT_USER
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.app.messaging.rabbitmq.secret.name }}
+                  key: LOREONPAY_ORDERS_MESSAGING_RABBITMQ_USERNAME
+            - name: RABBITMQ_DEFAULT_PASS
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.app.messaging.rabbitmq.secret.name }}
+                  key: LOREONPAY_ORDERS_MESSAGING_RABBITMQ_PASSWORD
+          {{- end }}
           ports:
           - name: amqp
             containerPort: 5672

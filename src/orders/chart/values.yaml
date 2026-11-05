@@ -5,9 +5,9 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/ileri-circo/loreon-pay-orders
+  repository: menalee/loreon-orders
   pullPolicy: IfNotPresent
-  tag: 
+  tag: "769a727"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -83,6 +83,12 @@ app:
       name: orders-db
       username: orders
       password: ""
+      # When enabled, External Secrets Operator creates this secret from AWS Secrets Manager
+      external:
+        enabled: false
+        storeName: aws-secrets-manager
+        remoteKey: loreon/orders-db
+        refreshInterval: 1h
 
   messaging:
     provider: 'in-memory'
@@ -95,6 +101,12 @@ app:
         name: orders-rabbitmq
         username: ""
         password: ""
+        # When enabled, External Secrets Operator creates this secret from AWS Secrets Manager
+        external:
+          enabled: false
+          storeName: aws-secrets-manager
+          remoteKey: loreon/orders-rabbitmq
+          refreshInterval: 1h
 
 postgresql:
   create: false

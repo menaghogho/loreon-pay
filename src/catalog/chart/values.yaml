@@ -5,9 +5,9 @@
 replicaCount: 1
 
 image:
-  repository: ghcr.io/ileri-circo/loreon-pay-catalog
+  repository: menalee/loreon-catalog
   pullPolicy: IfNotPresent
-  tag: 
+  tag: "0b3a852"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -83,6 +83,12 @@ app:
       name: catalog-db
       username: catalog
       password: ""
+      # When enabled, External Secrets Operator creates this secret from AWS Secrets Manager
+      external:
+        enabled: false
+        storeName: aws-secrets-manager
+        remoteKey: loreon/catalog-db
+        refreshInterval: 1h
 
 mysql:
   create: false
