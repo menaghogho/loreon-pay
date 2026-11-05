@@ -28,6 +28,9 @@ services:
     ports:
       - "8083:8080"
     depends_on:
+      rabbitmq:
+        condition: service_healthy
+        restart: true
       orders-db:
         condition: service_healthy
         restart: true
@@ -76,5 +79,11 @@ services:
       - RABBITMQ_DEFAULT_USER=rabbitmq
       - RABBITMQ_DEFAULT_PASS=${DB_PASSWORD}
     ports:
-      - "61616:61616"
-      - "8161:8161"
+      - "5672:5672"
+      - "15672:15672"
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+      start_period: 20s

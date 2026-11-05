@@ -42,8 +42,8 @@ export class OrderItem {
     type: string;
   }> = [
     {
-      name: 'unitCost',
-      baseName: 'price',
+      name: 'price',
+      baseName: 'unitCost',
       type: 'number',
     },
     {

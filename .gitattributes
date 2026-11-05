@@ -1,0 +1,2 @@
+# mvnw is run inside Linux containers, so it must keep LF endings on every OS.
+mvnw text eol=lf

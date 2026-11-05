@@ -85,7 +85,7 @@ five to their datastores. Every service **builds from source**, so you need no r
 and no prebuilt images:
 
 ```bash
-DB_PASSWORD='anything-local' docker compose -f src/app/docker-compose.yml up --build
+DB_PASSWORD='anything-local' docker compose -f src/app/docker-compose.yml -f src/app/compose.override.yaml up --build
 ```
 
 Then open <http://localhost:8888>. `DB_PASSWORD` is the only variable you must set;
@@ -96,7 +96,7 @@ The first run builds five images, three of them Maven, so budget several minutes
 and clean up with:
 
 ```bash
-docker compose -f src/app/docker-compose.yml down --remove-orphans
+docker compose -f src/app/docker-compose.yml -f src/app/compose.override.yaml down --remove-orphans
 ```
 
 ## Helm

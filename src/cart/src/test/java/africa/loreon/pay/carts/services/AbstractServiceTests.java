@@ -52,6 +52,15 @@ public abstract class AbstractServiceTests {
   }
 
   @Test
+  public void testAddItemKeepsQuantity() {
+    this.getService().add("quantity", "1", 3, 150);
+
+    CartEntity cartEntity = this.getService().get("quantity");
+
+    assertEquals(3, cartEntity.getItems().get(0).getQuantity());
+  }
+
+  @Test
   public void testRemoveItem() {
     this.getService().add("234", "1", 1, 150);
 

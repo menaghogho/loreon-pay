@@ -19,6 +19,7 @@
 package africa.loreon.pay.orders.services;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
 
 import africa.loreon.pay.orders.entities.OrderEntity;
@@ -80,6 +81,40 @@ public class OrderServicePostgresTests {
   void setUp() {
     RestAssured.baseURI = "http://localhost:" + port;
     orderRepository.deleteAll();
+  }
+
+  @Test
+  void shouldKeepProductIdsCostsAndAddress() {
+    orderRepository.save(
+      new OrderEntity(
+        List.of(
+          new OrderItemEntity("abc", 2, 100, 200),
+          new OrderItemEntity("def", 1, 50, 50)
+        ),
+        new ShippingAddressEntity(
+          "Jane",
+          "Roe",
+          "jane@example.com",
+          "1 Main",
+          "",
+          "Lagos",
+          "10001",
+          "LA"
+        )
+      )
+    );
+
+    given()
+      .contentType(ContentType.JSON)
+      .when()
+      .get("/orders")
+      .then()
+      .statusCode(200)
+      .body("[0].items[0].productId", equalTo("abc"))
+      .body("[0].items[0].unitCost", equalTo(100))
+      .body("[0].items[1].productId", equalTo("def"))
+      .body("[0].shippingAddress.firstName", equalTo("Jane"))
+      .body("[0].shippingAddress.zipCode", equalTo("10001"));
   }
 
   @Test

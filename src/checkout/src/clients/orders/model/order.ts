@@ -30,12 +30,11 @@
 
 import { RequestFile } from '../api';
 import { OrderItem } from './orderItem';
+import { ShippingAddress } from './shippingAddress';
 
 export class Order {
-  'email'?: string;
-  'firstName'?: string;
   'items'?: Array<OrderItem>;
-  'lastName'?: string;
+  'shippingAddress'?: ShippingAddress;
 
   static discriminator: string | undefined = undefined;
 
@@ -45,24 +44,14 @@ export class Order {
     type: string;
   }> = [
     {
-      name: 'email',
-      baseName: 'email',
-      type: 'string',
-    },
-    {
-      name: 'firstName',
-      baseName: 'firstName',
-      type: 'string',
-    },
-    {
       name: 'items',
       baseName: 'items',
       type: 'Array<OrderItem>',
     },
     {
-      name: 'lastName',
-      baseName: 'lastName',
-      type: 'string',
+      name: 'shippingAddress',
+      baseName: 'shippingAddress',
+      type: 'ShippingAddress',
     },
   ];
 

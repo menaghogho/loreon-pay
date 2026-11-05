@@ -51,7 +51,7 @@ services:
           "mysqladmin",
           "ping",
           "-h",
-          "localhost",
+          "127.0.0.1",
           "-u",
           "catalog_user",
           "-p${DB_PASSWORD}",
